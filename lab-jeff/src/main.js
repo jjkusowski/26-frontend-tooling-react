@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {};
-    this.state.value = 'What dows the Cow Say?';
+    this.state.content = 'What does the Cow Say?';
 
     this.cowsayWhat = this.cowsayWhat.bind(this);
 
@@ -17,7 +17,7 @@ class App extends React.Component {
 
   cowsayWhat() {
     let whatCowSays = cowsayBrowser.say({text: faker.lorem.words(3)})
-    this.setState({value: whatCowSays})
+    this.setState({content: whatCowSays})
   }
 
   render(){
@@ -25,10 +25,10 @@ class App extends React.Component {
       <div>
         <h1>Generate Cowsay Lorem</h1>
         <button onClick={this.cowsayWhat}> Click Me</button>
-        <pre>this.state.value</pre>
+        <pre>{this.state.content}</pre>
       </div>
     )
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+ReactDom.render(<App/>, document.getElementById('root'))
