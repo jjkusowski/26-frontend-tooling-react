@@ -1,8 +1,8 @@
-import './style/main.scss'
-import React from 'react'
-import ReactDom from 'react-dom'
-import cowsayBrowser from 'cowsay-browser'
-import faker from 'faker'
+import './style/main.scss';
+import React from 'react';
+import ReactDom from 'react-dom';
+import cowsayBrowser from 'cowsay-browser';
+import faker from 'faker';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class App extends React.Component {
   }
 
   cowsayWhat() {
-    let whatCowSays = cowsayBrowser.say({text: faker.lorem.words(3)})
-    this.setState({content: whatCowSays})
+    let whatCowSays = cowsayBrowser.say({text: faker.lorem.words(3)});
+    this.setState({content: whatCowSays});
   }
 
   render(){
@@ -27,8 +27,8 @@ class App extends React.Component {
         <button onClick={this.cowsayWhat}> Click Me</button>
         <pre>{this.state.content}</pre>
       </div>
-    )
+    );
   }
 }
 
-ReactDom.render(<App/>, document.getElementById('root'))
+ReactDom.render(<App/>, document.getElementById('root'));
